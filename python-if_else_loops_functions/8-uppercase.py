@@ -12,5 +12,5 @@ def uppercase(str):
         # Affiche le caractère, sans retour à la ligne. (end="").
         print("{}".format(upper_character), end="")
     # Saut de ligne à la fin de l'affichage
-    # ATTENTION ! print("\n") saute 2x à la ligne.
+    # ATTENTION ! ("\n") saute 2x à la ligne.
     print()
