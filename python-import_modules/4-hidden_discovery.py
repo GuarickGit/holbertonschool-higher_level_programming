@@ -55,3 +55,5 @@ if __name__ == "__main__":
     # Cette ligne vérifie si le script est exécuté directement (pas importé dans un autre module).
     # Si c'est le cas, on appelle la fonction 'discover_names()' pour exécuter le programme.
     # Cela permet de garantir que le code de découverte des noms ne s'exécute pas si ce fichier est importé dans un autre programme.
+
+    # Merci ChatMcQueen pour les commentaires ! 
