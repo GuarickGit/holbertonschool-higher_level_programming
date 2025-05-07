@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#!/usr/bin/python3
-
 from sys import argv
 
 if __name__ == "__main__":
@@ -16,6 +14,5 @@ if __name__ == "__main__":
     elif n_arguments > 1:
         print("{} arguments:".format(n_arguments))
 
-    for i in range(1, len(argv)):
-        print("{}: {}".format(i, argv[i]))
-
+        for i in range(1, len(argv)):
+            print("{}: {}".format(i, argv[i]))
