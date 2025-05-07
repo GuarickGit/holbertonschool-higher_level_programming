@@ -9,9 +9,11 @@ n_arguments = len(argv) - 1
 # Si aucun argument n'a été passé
 if n_arguments == 0:
     print("0 arguments.")
+
 # Si un seul argument a été passé
 elif n_arguments == 1:
     print("1 argument:")
+
 # Si plus d'un argument a été passé
 elif n_arguments > 1:
     # Affiche le nombre d'arguments suivi de "arguments:"
