@@ -9,7 +9,7 @@ def safe_print_list(my_list=[], x=0):
             print(my_list[i], end="")
             # Si l'impression réussit, on incrémente le compteur
             count += 1
-        except:
+        except IndexError:
             # Si l'élément n'existe pas (IndexError), on arrête la boucle
             break
     # On imprime un retour à la ligne après tous les éléments
