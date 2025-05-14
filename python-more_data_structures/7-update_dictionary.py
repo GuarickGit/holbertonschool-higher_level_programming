@@ -3,3 +3,4 @@
 def update_dictionary(a_dictionary, key, value):
     # Ajoute ou met à jour la clé avec la valeur donnée
     a_dictionary[key] = value
+    return a_dictionary
