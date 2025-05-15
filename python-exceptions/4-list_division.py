@@ -28,6 +28,9 @@ def list_division(my_list_1, my_list_2, list_length):
             print("division by 0")
             # On ajoute 0 à la place du résultat
             new_list.append(0)
+        # Bloc exécuté à chaque itération, qu'une exception ait eu lieu ou non.
+        finally:
+            pass
 
 # On retourne la liste des résultats
     return new_list
