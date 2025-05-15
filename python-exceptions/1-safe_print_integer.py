@@ -6,6 +6,7 @@ def safe_print_integer(value):
         # Si value n'est pas un entier, format() lèvera une TypeError
         print("{:d}".format(value))
         return True
-    except TypeError:
-        # Si une erreur de type est levée (ex : string, etc), on retourne False
+    except (TypeError, ValueError):
+        # Si une erreur est levée (valeur non entière ou mauvais type),
+        # on retourne False
         return False
