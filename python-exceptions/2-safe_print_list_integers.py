@@ -1,22 +1,23 @@
 #!/usr/bin/python3
 
 def safe_print_list_integers(my_list=[], x=0):
-    # Compteur pour le nombre d'entiers affichés
+    # Initialise un compteur pour le nombre d'entiers imprimés
     count = 0
 
-    # On parcourt les x premiers éléments de la liste
-    for i in range(x):
+    # Parcourt les x premiers éléments ou jusqu'à la fin de la liste
+    # (le plus petit des deux)
+    for i in range(min(x, len(my_list))):
         try:
-            # On essaie d'afficher l'élément comme un entier
+            # Tente d'imprimer l'élément en tant qu'entier (format {:d})
             print("{:d}".format(my_list[i]), end=" ")
-            # Si l'affichage réussit, on incrémente le compteur
+            # Incrémente le compteur si l'impression réussit
             count += 1
 
-        # Si une exception se produit (ex: type incompatible), on passe
+        # Ignore les éléments qui ne sont pas des entiers
         except (TypeError, ValueError):
             pass
 
-    # On ajoute un retour à la ligne après l'affichage
+    # Ajoute un saut de ligne après l'affichage
     print()
-    # On retourne le nombre d'entiers affichés
+    # Retourne le nombre d'entiers imprimés
     return count
