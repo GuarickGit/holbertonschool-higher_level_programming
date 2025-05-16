@@ -42,3 +42,13 @@ ZeroDivisionError: division by zero
 
 >>> matrix_divided([[-4, -2], [6, 8]], 2)
 [[-2.0, -1.0], [3.0, 4.0]]
+
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+>>> matrix_divided([[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
