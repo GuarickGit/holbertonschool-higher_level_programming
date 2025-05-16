@@ -31,7 +31,7 @@ TypeError: b must be an integer
 0
 
 >>> add_integer(-2.1, -1.9)
--4
+-3
 
 >>> add_integer(3, [4])
 Traceback (most recent call last):
@@ -55,5 +55,5 @@ TypeError: a must be an integer
 >>> add_integer(True, 3)
 4
 
->>> >>> add_integer(999999999999999999, 1)
+>>> add_integer(999999999999999999, 1)
 1000000000000000000
