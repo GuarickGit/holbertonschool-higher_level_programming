@@ -37,3 +37,23 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 	...
 TypeError: b must be an integer
+
+>>> add_integer(2, {})
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
+>>> add_integer(2.9, 3)
+5
+
+>>> add_integer({}, [])
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+
+>>> add_integer(True, 3)
+4
+
+>>> >>> add_integer(999999999999999999, 1)
+1000000000000000000
