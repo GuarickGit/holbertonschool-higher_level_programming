@@ -33,3 +33,14 @@ TypeError: div must be a number
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
+
+>>> matrix_divided([[2.0, 4.0]], 0.5)
+[[4.0, 8.0]]
+
+>>> matrix_divided([[5]], 2)
+[[2.5]]
+
+>>> matrix_divided([[-4, -2], [6, 8]], 2)
+[[-2.0, -1.0], [3.0, 4.0]]
+
+
