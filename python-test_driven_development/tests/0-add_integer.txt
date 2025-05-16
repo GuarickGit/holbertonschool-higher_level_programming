@@ -5,10 +5,30 @@
 >>> add_integer(100)
 198
 
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(-5, 5)
+0
+
+>>> add_integer(0, -20)
+-20
+
 >>> add_integer("2", 3)
 Traceback (most recent call last):
 	...
 TypeError: a must be an integer
 
+>>> add_integer(2, "3")
+Traceback (most recent call last):
+	...
+TypeError: b must be an integer
+
 >>> add_integer(2.3, 3.7)
 5
+
+add_integer(0.9, 0.9)
+0
+
+add_integer(-2.1, -1.9)
+-4
