@@ -5,6 +5,7 @@ This module provides a function that prints a full name,
 constructed from a first and an optional last name.
 """
 
+
 def say_my_name(first_name, last_name=""):
     """
     Prints a full name in the format 'My name is <first_name> <last_name>'.
@@ -23,4 +24,4 @@ def say_my_name(first_name, last_name=""):
 
     name = " ".join(part for part in [first_name, last_name] if part)
 
-    print(f"My name is{name and ' ' + name}")
+    print(f"My name is {first_name} {last_name}")
