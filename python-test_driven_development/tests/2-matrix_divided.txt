@@ -52,3 +52,31 @@ TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' an
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided([[None, 2], [4, 8]], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([["s", "d"], [4, 8]], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[4, 8], [16, 28]], None)
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+>>> matrix_divided([[4, 8], [16, 28]], "Hello")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+>>> matrix_divided([], 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[]], 2)
+[[]]
