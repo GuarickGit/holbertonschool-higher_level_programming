@@ -6,6 +6,7 @@ The function accepts integers and floats, converts floats to integers,
 and raises a TypeError if inputs are not valid.
 """
 
+
 def add_integer(a, b=98):
     """
     Adds two numbers (integers or floats) and returns their sum as an integer.
