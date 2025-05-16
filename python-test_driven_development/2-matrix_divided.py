@@ -1,3 +1,11 @@
+#!/usr/bin/python3
+
+"""
+This module provides a function that divides all elements of a matrix
+by a given number, with validation and rounding to 2 decimal places.
+"""
+
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a given number.
@@ -9,7 +17,7 @@ def matrix_divided(matrix, div):
 
     Raises:
         TypeError: If matrix is not a list of lists of numbers,
-            if the rows are not of the same size or empty, or if div is not
+            if the rows are not of the same size, or if div is not
             a number.
         ZeroDivisionError: If div is zero.
 
@@ -18,45 +26,41 @@ def matrix_divided(matrix, div):
         rounded to 2 decimal places.
     """
 
-    # Vérifie que matrix est une liste non vide
-    if not isinstance(matrix, list) or not matrix:
+
+    if not isinstance(matrix, list):
         raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats"
         )
-
-    # Vérifie que chaque ligne est une liste non vide
     for row in matrix:
-        if not isinstance(row, list) or not row:
+        if not isinstance(row, list):
             raise TypeError(
                 "matrix must be a matrix (list of lists) of integers/floats"
             )
 
-    # Vérifie que tous les éléments sont des int ou float
     for row in matrix:
         for item in row:
             if not isinstance(item, (int, float)):
                 raise TypeError(
-                    "matrix must be a matrix (list of lists) of "
-                    "integers/floats"
+                    "matrix must be a matrix (list of lists) of integers/floats"
                 )
 
-    # Vérifie que toutes les lignes ont la même taille
     row_length = len(matrix[0])
     for row in matrix:
         if len(row) != row_length:
             raise TypeError("Each row of the matrix must have the same size")
 
-    # Vérifie que div est un nombre
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
 
-    # Vérifie que div n’est pas égal à zéro
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Création d’une nouvelle matrice avec division et arrondi
-    new_matrix = [
-        [round(item / div, 2) for item in row] for row in matrix
-    ]
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for item in row:
+            result = round(item / div, 2)
+            new_row.append(result)
+        new_matrix.append(new_row)
 
     return new_matrix
