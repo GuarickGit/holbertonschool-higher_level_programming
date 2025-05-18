@@ -1,0 +1,84 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. World? Python:")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Python:
+<BLANKLINE>
+
+>>> text_indentation("   Hello.   World?  Python:   ")
+Hello.
+<BLANKLINE>
+World?
+<BLANKLINE>
+Python:
+<BLANKLINE>
+
+>>> text_indentation("No punctuation here")
+No punctuation here
+
+>>> text_indentation("Hello... Wait?! Really:")
+Hello.
+<BLANKLINE>
+<BLANKLINE>
+Wait?
+<BLANKLINE>
+!
+Really:
+<BLANKLINE>
+
+>>> text_indentation("Hi:How are you?Good.")
+Hi:
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+Good.
+<BLANKLINE>
+
+>>> text_indentation("")
+<BLANKLINE>
+
+>>> text_indentation("   ")
+<BLANKLINE>
+
+>>> text_indentation("End with dot.")
+End with dot.
+<BLANKLINE>
+
+>>> text_indentation("Multiple??!!...Text")
+Multiple?
+<BLANKLINE>
+?
+!
+!
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+.
+<BLANKLINE>
+Text
+
+>>> text_indentation("Mix of punctuation. And other things:Yes?No.")
+Mix of punctuation.
+<BLANKLINE>
+And other things:
+<BLANKLINE>
+Yes?
+<BLANKLINE>
+No.
+<BLANKLINE>
+
+>>> text_indentation(42)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(["Hello."])
+Traceback (most recent call last):
+TypeError: text must be a string
