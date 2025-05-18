@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module that prints text with two new lines after '.', '?' and ':' characters."""
+"""Module that prints text with two new lines after '.', '?' and ':'
+characters."""
 
 
 def text_indentation(text):
