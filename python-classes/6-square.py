@@ -26,7 +26,8 @@ class Square:
         size (int, optional): La taille du carré (longueur d’un côté).
             Doit être un entier supérieur ou égal à 0. Par défaut 0.
         position (tuple, optional): Un tuple de 2 entiers positifs représentant
-            le décalage horizontal et vertical lors de l’affichage. Par défaut (0, 0).
+            le décalage horizontal et vertical lors de l’affichage.
+            Par défaut (0, 0).
 
         Raises:
             TypeError: Si size n'est pas un entier ou si position est invalide.
