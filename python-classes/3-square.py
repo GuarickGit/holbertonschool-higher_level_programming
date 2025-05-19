@@ -2,7 +2,8 @@
 """Module définissant la classe Square.
 
 Ce module fournit une implémentation d'un carré avec une taille privée.
-La taille est validée pour s'assurer qu'elle est un entier supérieur ou égal à 0.
+La taille est validée pour s'assurer qu'elle est un entier supérieur ou
+égal à 0.
 La classe permet aussi de calculer l'aire du carré.
 """
 
