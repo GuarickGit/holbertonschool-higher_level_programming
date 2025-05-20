@@ -2,47 +2,41 @@
 """Module définissant une classe Rectangle.
 
 Cette classe permet de créer des rectangles avec une largeur et une hauteur
-données, et fournit des méthodes pour calculer leur aire, leur périmètre,
-ainsi qu'une représentation visuelle personnalisable à l'aide de `print_symbol`.
+données, et fournit des méthodes pour calculer leur aire, périmètre, ainsi
+qu'une représentation textuelle avec le caractère #.
 """
 
 
 class Rectangle:
-    """Classe représentant un rectangle défini par une largeur et une hauteur.
+    """Classe représentant un rectangle avec largeur et hauteur.
 
-    Attributs de classe :
-        number_of_instances (int): Compte le nombre d'instances actives.
-        print_symbol (any): Symbole utilisé pour la représentation visuelle
-                        (converti en str lors de l'affichage).
+    Attributs de classe:
+        number_of_instances (int): Compte le nombre d'instances
+        actives de Rectangle.
 
-    Méthodes publiques :
-        area(): Retourne l'aire du rectangle.
-        perimeter(): Retourne le périmètre du rectangle.
+    Fournit des méthodes pour calculer l'aire, le périmètre,
+    et afficher une représentation visuelle ou formelle du rectangle.
     """
     number_of_instances = 0
 
-    print_symbol = "#"
-
     def __init__(self, width=0, height=0):
-        """Initialise un nouveau rectangle avec largeur et hauteur optionnelles.
+        """Initialise un nouveau rectangle.
 
         Args:
-            width (int): Largeur du rectangle (défaut: 0).
-            height (int): Hauteur du rectangle (défaut: 0).
+            width (int): Largeur du rectangle (par défaut 0).
+            height (int): Hauteur du rectangle (par défaut 0).
         """
-
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
 
     @property
     def width(self):
-        """Récupère la largeur actuelle du rectangle.
+        """Récupère la largeur du rectangle.
 
         Returns:
-            int: La largeur du rectangle.
+            int: La largeur actuelle du rectangle.
         """
-
         return self.__width
 
     @width.setter
@@ -50,11 +44,11 @@ class Rectangle:
         """Définit la largeur du rectangle.
 
         Args:
-            value (int): Nouvelle largeur.
+            value (int): Nouvelle largeur du rectangle.
 
         Raises:
             TypeError: Si la valeur n'est pas un entier.
-            ValueError: Si la largeur est négative.
+            ValueError: Si la valeur est négative.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -111,39 +105,41 @@ class Rectangle:
             return (self.__width + self.__height) * 2
 
     def __str__(self):
-        """Renvoie une représentation visuelle du rectangle.
+        """Renvoie une représentation visuelle du rectangle avec
+        le caractère #.
 
-        Utilise le symbole stocké dans `print_symbol` (converti en str
-        si nécessaire) pour construire une chaîne composée de lignes
-        correspondant à la hauteur et à la largeur du rectangle.
+        Retourne une chaîne composée de lignes de #, dont le nombre
+        correspond à la hauteur et la largeur du rectangle.
 
         Returns:
-            str: Représentation textuelle, ou chaîne vide si width ou
-            height est 0.
+            str: Représentation textuelle ou chaîne vide si l'une des
+            dimensions est nulle.
         """
         if self.__width == 0 or self.__height == 0:
             return ""
 
         rect_lines = []
         for row in range(self.__height):
-            rect_lines.append(str(self.print_symbol) * self.__width)
+            rect_lines.append("#" * self.__width)
         return "\n".join(rect_lines)
 
     def __repr__(self):
-        """Renvoie une représentation formelle du rectangle.
-
-        Cette chaîne permet de recréer une instance identique via eval().
+        """Renvoie une chaîne de caractères représentant le rectangle de façon
+        non ambiguë, pouvant être utilisée avec eval() pour recréer une
+        instance identique.
 
         Returns:
-            str: Chaîne de la forme 'Rectangle(width, height)'.
+            str: Représentation formelle du rectangle sous la forme
+             'Rectangle(width, height)'.
         """
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Méthode appelée lors de la suppression d'une instance.
+        """Affiche un message lors de la suppression de l'instance.
 
-        Affiche un message de fin et décrémente le compteur
-        `number_of_instances`.
+        Cette méthode spéciale est appelée automatiquement lorsque
+        l'objet Rectangle est détruit (par exemple via del ou en
+        fin de programme).
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
