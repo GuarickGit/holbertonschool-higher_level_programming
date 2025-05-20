@@ -3,7 +3,8 @@
 
 Cette classe permet de créer des rectangles avec une largeur et une hauteur
 données, et fournit des méthodes pour calculer leur aire, leur périmètre,
-ainsi qu'une représentation visuelle personnalisable à l'aide de `print_symbol`.
+ainsi qu'une représentation visuelle personnalisable à l'aide de
+`print_symbol`.
 """
 
 
@@ -24,7 +25,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialise un nouveau rectangle avec largeur et hauteur optionnelles.
+        """Initialise un nouveau rectangle avec largeur et hauteur
+        optionnelles.
 
         Args:
             width (int): Largeur du rectangle (défaut: 0).
