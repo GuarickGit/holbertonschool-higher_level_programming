@@ -1,0 +1,33 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# Cas de base : liste non triée
+>>> m = MyList([5, 2, 4, 1])
+>>> m.print_sorted()
+[1, 2, 4, 5]
+
+# Liste déjà triée
+>>> m = MyList([1, 2, 3])
+>>> m.print_sorted()
+[1, 2, 3]
+
+# Liste avec des doublons
+>>> m = MyList([3, 1, 2, 3])
+>>> m.print_sorted()
+[1, 2, 3, 3]
+
+# Liste vide
+>>> m = MyList([])
+>>> m.print_sorted()
+[]
+
+# Un seul élément
+>>> m = MyList([42])
+>>> m.print_sorted()
+[42]
+
+# Vérification que la liste originale n'est pas modifiée
+>>> m = MyList([4, 2, 1])
+>>> m.print_sorted()
+[1, 2, 4]
+>>> m
+[4, 2, 1]
