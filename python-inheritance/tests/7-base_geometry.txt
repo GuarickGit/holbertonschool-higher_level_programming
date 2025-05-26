@@ -2,29 +2,62 @@
 
 >>> bg = BaseGeometry()
 
-# Test de la méthode area()
+# ======== TEST DE LA MÉTHODE area() ========
+# Doit lever une exception car non implémentée
 >>> bg.area()
 Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
-# Test integer_validator : valeur correcte
+# ======== TESTS DE integer_validator ========
+
+# --- Cas valide ---
+# Un entier strictement positif ne doit rien lever
 >>> bg.integer_validator("width", 10)
 
-# Test integer_validator : valeur non entière
+# --- Cas non valide : string ---
+# Doit lever TypeError car "10" est une string
 >>> bg.integer_validator("width", "10")
 Traceback (most recent call last):
 ...
 TypeError: width must be an integer
 
-# Test integer_validator : valeur égale à 0
+# --- Cas non valide : zéro ---
+# Doit lever ValueError car 0 n’est pas strictement positif
 >>> bg.integer_validator("width", 0)
 Traceback (most recent call last):
 ...
 ValueError: width must be greater than 0
 
-# Test integer_validator : valeur négative
+# --- Cas non valide : négatif ---
+# Doit lever ValueError car -3 < 0
 >>> bg.integer_validator("width", -3)
 Traceback (most recent call last):
 ...
 ValueError: width must be greater than 0
+
+# --- Cas non valide : float ---
+# Doit lever TypeError car 10.5 n’est pas un int
+>>> bg.integer_validator("height", 10.5)
+Traceback (most recent call last):
+...
+TypeError: height must be an integer
+
+# --- Cas non valide : booléen ---
+# True est un int en Python, mais ici on ne veut pas l’accepter
+>>> bg.integer_validator("width", True)
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+# --- Cas non valide : None ---
+>>> bg.integer_validator("size", None)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+# --- Cas non valide : liste ---
+>>> bg.integer_validator("length", [10])
+Traceback (most recent call last):
+...
+TypeError: length must be an integer
