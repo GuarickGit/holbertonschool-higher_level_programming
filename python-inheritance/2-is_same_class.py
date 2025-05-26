@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Ce module fournit une fonction pour vérifier si un objet est exactement une
+instance d'une classe donnée, sans prendre en compte l'héritage.
+"""
+
 
 def is_same_class(obj, a_class):
     """
