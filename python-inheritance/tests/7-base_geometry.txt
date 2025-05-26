@@ -61,3 +61,34 @@ TypeError: size must be an integer
 Traceback (most recent call last):
 ...
 TypeError: length must be an integer
+
+# --- Cas non valide : dictionnaire ---
+>>> bg.integer_validator("depth", {"value": 5})
+Traceback (most recent call last):
+...
+TypeError: depth must be an integer
+
+# --- Cas non valide : tuple ---
+>>> bg.integer_validator("position", (5,))
+Traceback (most recent call last):
+...
+TypeError: position must be an integer
+
+# --- Cas non valide : string vide ---
+>>> bg.integer_validator("level", "")
+Traceback (most recent call last):
+...
+TypeError: level must be an integer
+
+# --- Cas non valide : chaîne contenant un chiffre ---
+>>> bg.integer_validator("level", "5")
+Traceback (most recent call last):
+...
+TypeError: level must be an integer
+
+# --- Cas non valide : objet custom ---
+>>> class Dummy: pass
+>>> bg.integer_validator("custom", Dummy())
+Traceback (most recent call last):
+...
+TypeError: custom must be an integer
