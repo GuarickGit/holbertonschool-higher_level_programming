@@ -31,3 +31,55 @@
 [1, 2, 4]
 >>> m
 [4, 2, 1]
+
+# Beaucoup d’éléments
+>>> m = MyList([9, 7, 5, 3, 1, 2, 4, 6, 8, 0])
+>>> m.print_sorted()
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Tous les éléments identiques
+>>> m = MyList([5, 5, 5, 5])
+>>> m.print_sorted()
+[5, 5, 5, 5]
+
+# Nombres négatifs
+>>> m = MyList([-1, -3, 2, 0])
+>>> m.print_sorted()
+[-3, -1, 0, 2]
+
+# Grand nombre + petit nombre
+>>> m = MyList([999999, -999999])
+>>> m.print_sorted()
+[-999999, 999999]
+
+# Mylist vide, instancié sans arguments
+>>> m = MyList()
+>>> m.print_sorted()
+[]
+
+# MyList contenant déjà une autre liste triée
+>>> l = [1, 2, 3]
+>>> m = MyList(l)
+>>> m.print_sorted()
+[1, 2, 3]
+
+>>> m = MyList([3, 2, 1])
+>>> result = m.print_sorted()  # L'affichage se fait ici
+[1, 2, 3]
+>>> print(result is None)
+True
+
+# Repasser print_sorted plusieurs fois
+>>> m = MyList([3, 1, 2])
+>>> m.print_sorted()
+[1, 2, 3]
+>>> m.print_sorted()
+[1, 2, 3]
+
+# Modifications après appel
+>>> m = MyList([3, 2, 1])
+>>> m.print_sorted()
+[1, 2, 3]
+>>> m.append(0)
+>>> m.print_sorted()
+[0, 1, 2, 3]
