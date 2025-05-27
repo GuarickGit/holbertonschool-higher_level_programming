@@ -23,10 +23,7 @@ class Circle(Shape):
     def __init__(self, radius):
         """Initialise un cercle avec le rayon fourni."""
         super().__init__()
-        if radius < 0:
-            raise ValueError ("Rayon invalide : doit être positif ou nul")
-        else:
-            self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """Retourne l'aire du cercle."""
