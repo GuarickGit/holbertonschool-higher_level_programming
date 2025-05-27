@@ -103,3 +103,24 @@ ValueError: 123 must be greater than 0
 Traceback (most recent call last):
 ...
 TypeError: flag must be an integer
+
+# --- Cas non valide : appel sans argument ---
+# Doit lever TypeError car il manque les arguments obligatoires
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# --- Cas non valide : set ---
+# Doit lever TypeError car {1} est un set
+>>> bg.integer_validator("dataset", {1})
+Traceback (most recent call last):
+...
+TypeError: dataset must be an integer
+
+# --- Vérification de l'instance ---
+# Juste pour confirmer que bg est bien une instance de BaseGeometry
+>>> isinstance(bg, BaseGeometry)
+True
+>>> type(bg).__name__
+'BaseGeometry'
