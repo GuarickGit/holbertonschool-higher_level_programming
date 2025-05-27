@@ -69,7 +69,8 @@ class Rectangle(BaseGeometry):
         # la logique de validation.
         # Les noms "width" et "height" sont passés pour apparaître clairement
         # dans les messages d'erreur si la validation échoue.
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
         self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
+
