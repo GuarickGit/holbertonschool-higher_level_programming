@@ -86,9 +86,20 @@ Traceback (most recent call last):
 ...
 TypeError: level must be an integer
 
-# --- Cas non valide : objet custom ---
->>> class Dummy: pass
->>> bg.integer_validator("custom", Dummy())
+# Test avec un nom vide (""), le message d'erreur devient peu clair
+>>> bg.integer_validator("", 0)
 Traceback (most recent call last):
 ...
-TypeError: custom must be an integer
+ValueError:  must be greater than 0
+
+# Test avec un nom qui n’est pas une string (ici un int), ce cas est toléré car la consigne dit qu’on peut supposer que name est toujours une string
+>>> bg.integer_validator(123, 0)
+Traceback (most recent call last):
+...
+ValueError: 123 must be greater than 0
+
+# Test avec False (en plus de True testé plus haut)
+>>> bg.integer_validator("flag", False)
+Traceback (most recent call last):
+...
+TypeError: flag must be an integer
