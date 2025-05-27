@@ -22,9 +22,23 @@ class BaseGeometry:
         Lève :
             Exception : indique que la méthode n'est pas encore implémentée.
         """
+
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
+        """
+        Valide que `value` est un entier strictement positif.
+
+        Args:
+            name (str): Le nom de l'attribut (utilisé dans
+            les messages d'erreur).
+            value (int): La valeur à valider.
+
+        Raises:
+            TypeError: Si `value` n'est pas un entier.
+            ValueError: Si `value` est inférieur ou égal à 0.
+        """
+
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
 
