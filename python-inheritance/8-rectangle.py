@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+Ce module contient la définition d'une classe de base pour des formes
+géométriques.
+"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
