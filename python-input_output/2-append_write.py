@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Ce module contient une fonction permettant d’ajouter du texte
 à la fin d’un fichier texte (encodé en UTF-8), et de retourner
