@@ -7,8 +7,8 @@ Le fichier utilisé est 'add_item.json'. Il est créé s’il n’existe pas.
 
 import sys  # Pour récupérer les arguments passés au script
 import os  # Pour vérifier si le fichier existe
-from save_to_json_file import save_to_json_file  # Pour sauvegarder la liste
-from load_from_json_file import load_from_json_file  # Pour charger la liste
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 # Si le fichier existe, on charge la liste à partir de celui-ci
 if os.path.exists("add_item.json"):
