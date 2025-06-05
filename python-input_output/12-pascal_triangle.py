@@ -4,6 +4,7 @@ Module qui génère le triangle de Pascal jusqu'à une profondeur donnée.
 Contient une seule fonction : pascal_triangle(n).
 """
 
+
 def pascal_triangle(n):
     """
     Génère le triangle de Pascal jusqu'à la ligne n (incluse).
