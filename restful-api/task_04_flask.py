@@ -58,7 +58,7 @@ def get_user(username):
         return jsonify(users[username])
     else:
         # Si l'utilisateur n'existe pas, retourne une erreur
-        return jsonify({"error": "User not found"})
+        return jsonify({"error": "User not found"}), 404
 
 # Route "/add_user" pour ajouter un nouvel utilisateur via une requête POST
 
@@ -79,7 +79,7 @@ def add_user():
     # Ajoute l'utilisateur dans le dictionnaire, la clé étant le username
     users[username] = data
     # Retourne un message de confirmation avec le code HTTP 201 (création)
-    return jsonify({"message": "User added"}), 201
+    return jsonify({"message": "User added", "user": data}), 201
 
 
 # Lancement du serveur Flask uniquement si ce fichier est exécuté directement
