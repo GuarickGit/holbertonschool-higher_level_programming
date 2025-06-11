@@ -156,7 +156,7 @@ def jwt_protected():
 # -----------------------------
 
 
-@app.route('/admin_only')
+@app.route('/admin-only')
 @jwt_required()
 def is_admin():
     """
