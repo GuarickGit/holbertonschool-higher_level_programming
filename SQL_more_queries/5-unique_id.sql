@@ -2,6 +2,6 @@
 -- id value is 1 by default and is unique
 CREATE TABLE IF NOT EXISTS unique_id (
 	ID INT DEFAULT 1,
-	name VARCHAR(256)
+	name VARCHAR(256),
 	UNIQUE (ID)
 );
