@@ -25,7 +25,9 @@ if __name__ == "__main__":
 
     # Construction de la requête SQL avec filtrage exact (sensible à la casse)
     query = ("SELECT * FROM states "
-             "WHERE BINARY name = '{}'").format(sys.argv[4])
+             "WHERE BINARY name = '{}' "
+             "ORDER BY states.id ASC"
+             ).format(sys.argv[4])
 
     # Exécution de la requête SQL
     cursor.execute(query)
