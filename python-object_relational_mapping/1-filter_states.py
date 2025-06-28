@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
     # Exécution de la requête pour récupérer les states commençant par 'N'
     cursor.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
+        "SELECT id, name "
+        " FROM states WHERE BINARY name LIKE 'N%' ORDER BY states.id ASC")
 
     # Récupération et affichage de toutes les lignes obtenues
     rows = cursor.fetchall()
