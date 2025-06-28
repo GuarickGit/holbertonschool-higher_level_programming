@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Ce script affiche tous les états présents dans la base de données hbtn_0e_0_usa.
+Ce script affiche tous les états présents dans la base de données hbtn_0e_0_usa
 Il se connecte à la base en utilisant les identifiants fournis en argument.
 Les résultats sont triés par ordre croissant d'identifiant (id).
 """
