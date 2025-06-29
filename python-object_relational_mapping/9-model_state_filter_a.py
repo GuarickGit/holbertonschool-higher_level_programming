@@ -26,11 +26,12 @@ if __name__ == "__main__":
     session = Session()
 
     # Requête : récupérer tous les State où name contient 'a', triés par id
-    states = session.query(State) \
-        .filter(State.name.like('%a%')) \
-        .order_by(State.id).all()
-    # (RAPPEL) - les \ permettent à Python de dire que la ligne continue.
-    # Néccessaire si on ne coupe pas dans une parenthèse ouverte.
+    states = (
+        session.query(State)
+        .filter(State.name.like('%a%'))
+        .order_by(State.id)
+        .all()
+    )
 
     # Affichage des résultats
     for state in states:
