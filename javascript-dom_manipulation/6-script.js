@@ -6,4 +6,7 @@ fetch('https://swapi-api.hbtn.io/api/people/5/?format=json')
     const name = data.name;
     const character = document.getElementById('character');
     character.textContent = name;
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
   });
