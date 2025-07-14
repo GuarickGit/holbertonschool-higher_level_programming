@@ -1,0 +1,13 @@
+#!/usr/bin/node
+
+fetch('https://swapi-api.hbtn.io/api/films/?format=json')
+  .then(response => response.json())
+  .then(data => {
+    const movies = data.results;
+    const moviesUl = document.getElementById('list_movies');
+    movies.forEach(movie => {
+      const listItem = document.createElement('li');
+      listItem.textContent = movie.title;
+      moviesUl.appendChild(listItem);
+    });
+  });
