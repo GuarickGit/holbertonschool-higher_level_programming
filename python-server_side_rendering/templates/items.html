@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Items List</title>
+	</head>
+	<body>
+		<!-- Inclusion du header commun à toutes les pages -->
+		{% include 'header.html' %}
+
+		<h1>Items List</h1>
+
+		<!-- Si la liste "items" existe et n'est pas vide -->
+		{%if items %}
+			<ul>
+				<!-- On parcourt chaque élément de la liste -->
+				{% for item in items %}
+					<li>{{item}}</li> <!-- Affichage d'un item -->
+				{% endfor %}
+			</ul>
+			{% else %}
+				<!-- Si la liste est vide, on affiche un message -->
+				<p>No items found</p>
+			{% endif %}
+
+		<!-- Inclusion du footer commun à toutes les pages -->
+		{% include 'footer.html' %}
+	</body>
+</html>
