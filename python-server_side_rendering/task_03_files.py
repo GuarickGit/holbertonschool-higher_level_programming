@@ -62,8 +62,9 @@ def products():
     product = None
 
     for p in data:
+        print(">>", p)
         # Vérif. que le champ "id" existe dans l'élément avant de le comparer
-        if "id" in p and int(p["id"]) == product_id:
+        if "id" in p and int(p["id"].strip()) == product_id:
             product = p
             break
 
