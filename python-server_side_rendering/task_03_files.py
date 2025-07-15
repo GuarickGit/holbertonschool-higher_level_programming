@@ -51,7 +51,7 @@ def products():
     else:
         # Si la source est inconnue, afficher un message d'erreur
         return render_template('product_display.html',
-                               error="wrong source")
+                               error="Wrong source")
 
     # Si aucun id n'est donné, afficher tous les produits
     if product_id is None:
